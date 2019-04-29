@@ -1,4 +1,4 @@
- 　class MessagesController < ApplicationController
+  class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -53,4 +53,7 @@
   def message_params
     params.require(:message).permit(:content)
   end
-end
+   def message_params
+    params.require(:message).permit(:content, :title)
+   end
+  end
